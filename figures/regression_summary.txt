@@ -1,0 +1,26 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    Oil   R-squared:                       0.062
+Model:                            OLS   Adj. R-squared:                  0.061
+Method:                 Least Squares   F-statistic:                     91.86
+Date:                Sun, 15 Feb 2026   Prob (F-statistic):           2.31e-39
+Time:                        21:58:37   Log-Likelihood:                 6065.4
+No. Observations:                2791   AIC:                        -1.212e+04
+Df Residuals:                    2788   BIC:                        -1.211e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       6.137e-06      0.001      0.012      0.991      -0.001       0.001
+USD           -0.1823      0.119     -1.532      0.126      -0.416       0.051
+SP500          0.6177      0.046     13.291      0.000       0.527       0.709
+==============================================================================
+Omnibus:                      723.387   Durbin-Watson:                   1.996
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            50787.550
+Skew:                           0.184   Prob(JB):                         0.00
+Kurtosis:                      23.895   Cond. No.                         228.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
