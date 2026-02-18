@@ -23,13 +23,29 @@ def download_market_data(start="2015-01-01"):
     data = {}
 
     for name, ticker in tickers.items():
+
         df = yf.download(ticker, start=start, progress=False)
-        data[name] = df["Adj Close"]
 
-    df = pd.DataFrame(data)
-    df.dropna(inplace=True)
+        # -------- Robust column handling ----------
+        if isinstance(df.columns, pd.MultiIndex):
+            if ("Adj Close", ticker) in df.columns:
+                series = df[("Adj Close", ticker)]
+            else:
+                series = df[("Close", ticker)]
+        else:
+            if "Adj Close" in df.columns:
+                series = df["Adj Close"]
+            else:
+                series = df["Close"]
+        # ------------------------------------------
 
-    return df
+        data[name] = series
+
+    combined = pd.DataFrame(data)
+    combined.dropna(inplace=True)
+
+    return combined
+
 
 
 # ------------------------------------------
