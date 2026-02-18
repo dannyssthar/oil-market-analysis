@@ -45,6 +45,20 @@ oil-market-analysis/
 
 ---
 
+This extension incorporates US Treasury yield data (FRED)
+to examine how interest rate movements influence oil returns.
+
+Pipeline includes:
+
+- API data ingestion
+- Time-series alignment
+- Log-return transformation
+- Correlation visualization
+- OLS factor regression
+
+All scripts are documented for reproducibility and learning.
+
+
 ## Author
 
 Daniel — Macro-Quant/Econ hybrid
